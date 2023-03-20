@@ -3,7 +3,9 @@
 	"version": "1.0.0",
 	"scripts": {
 		"prebuild": "rimraf dist",
-		"build": "nest build",
+		"build:prisma": "npx prisma generate && npx prisma db push",
+		"build:api": "nest build",
+		"build": "npm run build:prisma && npm run build:api",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
 		"start": "nest start",
 		"start:dev": "nest start --watch",

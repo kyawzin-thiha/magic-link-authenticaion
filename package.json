@@ -3,6 +3,18 @@
 	"version": "1.0.0",
 	"description": "This is centralized email magic link authentication system for web applications",
 	"scripts": {
+		"build:api": "npm run build --prefix ./api",
+		"start:api": "npm run start --prefix ./api",
+		"build:web": "npm run build --prefix ./web",
+		"start:web": "npm run start --prefix ./web",
+		"build:core": "npm run build:api && npm run build:web",
+		"start:core": "npm run start:api && npm run start:web",
+		"build:magic": "npm run build --prefix ./magicLink",
+		"start:magic": "npm run start --prefix ./magicLink",
+		"build:sample": "npm run build --prefix ./sample",
+		"start:sample": "npm run start --prefix ./sample",
+		"build:all": "npm run build:core && npm run build:magic && npm run build:sample",
+		"start:all": "npm run start:core && npm run start:magic && npm run start:sample",
 		"prepare": "husky install"
 	},
 	"author": "Kyaw Zin Thiha",
