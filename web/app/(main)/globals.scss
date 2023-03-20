@@ -1,0 +1,31 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: rgb(86, 86, 86);
+}
+
+*::-webkit-scrollbar {
+	display: none;
+}
+
+body {
+	background: rgba($color: #F3FBEE, $alpha: 0.5);
+}
+
+.root-container {
+	width: 100%;
+	max-width: 1000px;
+	min-height: calc(100vh - 60px);
+	height: auto;
+	padding: 10px 5px;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 1px solid rgba($color: #F3FBEE, $alpha: 1);
+}
