@@ -1,0 +1,84 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["filteredRelationCount"]
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Account {
+  id        String   @id @default(cuid()) @map("_id")
+  username  String   @unique
+  password  String
+  user      User?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model User {
+  id         String    @id @default(cuid()) @map("_id")
+  name       String
+  email      String    @unique
+  isVerified Boolean   @default(false)
+  avatar     String
+  projects   Project[]
+  accountId  String    @unique
+  account    Account   @relation(fields: [accountId], references: [id], onDelete: Cascade)
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+}
+
+model Project {
+  id          String       @id @default(cuid()) @map("_id")
+  name        String
+  uniqueName  String       @unique
+  description String
+  credentials Credential?
+  collections Collection[]
+  blacklists  Blacklist[]
+  ownerId     String
+  owner       User         @relation(fields: [ownerId], references: [id], onDelete: Cascade)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@unique([uniqueName, ownerId])
+}
+
+model Credential {
+  id         String   @id @default(cuid()) @map("_id")
+  uniqueKey  String   @unique
+  hostUrl    String
+  successUrl String
+  projectId  String   @unique
+  project    Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Collection {
+  id        String   @id @default(cuid()) @map("_id")
+  username  String
+  email     String
+  isActive  Boolean  @default(true)
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([username, email, projectId])
+  @@unique([username, projectId])
+}
+
+model Blacklist {
+  id        String   @id @default(cuid()) @map("_id")
+  email     String
+  isActive  Boolean  @default(false)
+  projectId String
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([email, projectId])
+}
