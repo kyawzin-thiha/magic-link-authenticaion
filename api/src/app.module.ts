@@ -8,6 +8,7 @@ import { UserModule } from './routes/user/user.module';
 import { ProjectModule } from './routes/project/project.module';
 import { CollectionModule } from './routes/collection/collection.module';
 import { BlacklistModule } from './routes/blacklist/blacklist.module';
+import { MagicLinkModule } from './routes/magicLink/magicLink.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { BlacklistModule } from './routes/blacklist/blacklist.module';
     ProjectModule,
     CollectionModule,
     BlacklistModule,
+    MagicLinkModule,
   ],
   providers: [
     {

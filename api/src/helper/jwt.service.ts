@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { ErrorDto } from 'src/types/error.dto';
-import { CollectionTokenDto, TokenDto } from 'src/types/system.dto';
+import { ProjectTokenDto, TokenDto } from 'src/types/system.dto';
 
 @Injectable()
 export class JwtTokenService {
 	constructor(private readonly jwtService: JwtService) { }
 
-	sign(payload: TokenDto | CollectionTokenDto, expiresIn = '1d'): [string | null, ErrorDto] {
+	sign(payload: TokenDto | ProjectTokenDto, expiresIn = '1d'): [string | null, ErrorDto] {
 		try {
 			const token = this.jwtService.sign(payload, {
 				expiresIn,
