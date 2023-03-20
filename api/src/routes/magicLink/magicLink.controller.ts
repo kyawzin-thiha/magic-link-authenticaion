@@ -13,7 +13,7 @@ import { MagicLinkService } from './magicLink.service';
 import { Type } from 'src/decorators/type.decorator';
 import { MagicLinkGuard } from 'src/guards/magicLink.guard';
 
-@Controller('client')
+@Controller('magic-link')
 export class MagicLinkController {
     constructor(private readonly magicLinkService: MagicLinkService) { }
 
