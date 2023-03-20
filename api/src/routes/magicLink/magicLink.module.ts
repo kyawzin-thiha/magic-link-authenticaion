@@ -11,7 +11,6 @@ import * as cors from 'cors';
 })
 export class MagicLinkModule {
   configure(consumer: MiddlewareConsumer) {
-    console.log('yes executed app confogure');
     consumer
       .apply(
         cors({
