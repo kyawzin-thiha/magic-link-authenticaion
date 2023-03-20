@@ -1,0 +1,24 @@
+.verify_email-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+        letter-spacing: 2px;
+    }
+    .alert-container {
+        width: 80%;
+        min-height: 200px;
+        height: auto;
+        padding: 10px 5px;
+        margin: 10px auto 0px auto;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        @media screen and (max-width: 480px) {
+            width: 100%;
+        }
+    }
+}
