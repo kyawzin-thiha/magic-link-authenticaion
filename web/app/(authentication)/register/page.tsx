@@ -211,14 +211,14 @@ export default function RegisterPage() {
 	};
 
 	useEffect(() => {
-/* 		if (systemData.usernames.length === 0) {
+		if (systemData.usernames.length === 0) {
 			const getAllUsernamesAsync = async () => {
 				const data = await getAllUsernames();
 				setUsernames(data);
 			};
 			getAllUsernamesAsync();
-		} */
-	}, [systemData.usernames]);
+		}
+	}, []);
 
 	return (
 		<>
