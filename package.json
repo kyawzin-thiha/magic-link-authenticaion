@@ -1,0 +1,18 @@
+{
+	"name": "web-auth",
+	"version": "1.0.0",
+	"description": "This is centralized email magic link authentication system for web applications",
+	"scripts": {
+		"prepare": "husky install"
+	},
+	"author": "Kyaw Zin Thiha",
+	"license": "MIT",
+	"devDependencies": {
+		"husky": "^8.0.3",
+		"lint-staged": "^13.2.0",
+		"prettier": "^2.8.5"
+	},
+	"lint-staged": {
+		"*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+	}
+}
