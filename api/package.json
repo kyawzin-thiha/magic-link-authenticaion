@@ -20,6 +20,7 @@
 		"@nestjs/jwt": "^10.0.2",
 		"@nestjs/platform-express": "^9.0.0",
 		"@prisma/client": "^4.11.0",
+		"@sendgrid/mail": "^7.7.0",
 		"@types/bcryptjs": "^2.4.2",
 		"@types/multer": "^1.4.7",
 		"bcryptjs": "^2.4.3",
