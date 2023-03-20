@@ -12,13 +12,21 @@
 		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
 	},
 	"dependencies": {
+		"@aws-sdk/client-s3": "^3.295.0",
+		"@dicebear/avatars": "^4.10.8",
+		"@dicebear/big-ears-neutral": "^4.10.8",
 		"@nestjs/common": "^9.0.0",
 		"@nestjs/core": "^9.0.0",
+		"@nestjs/jwt": "^10.0.2",
 		"@nestjs/platform-express": "^9.0.0",
 		"@prisma/client": "^4.11.0",
+		"@types/bcryptjs": "^2.4.2",
+		"@types/multer": "^1.4.7",
+		"bcryptjs": "^2.4.3",
 		"compression": "^1.7.4",
 		"cookie-parser": "^1.4.6",
 		"helmet": "^6.0.1",
+		"redis": "^4.6.5",
 		"reflect-metadata": "^0.1.13",
 		"rimraf": "^3.0.2"
 	},
