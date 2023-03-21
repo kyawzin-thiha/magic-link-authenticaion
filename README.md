@@ -1,6 +1,10 @@
-## Centralized Authentication System
+## Centralized Authentication System [Live URL](https://ceas.kyawzinthiha.dev) | [Magic Link Testing Sample](https://sample.ceas.kyawzinthiha.dev)
 
 This is an centralized email magic link authentication system using Nest.js and Next.js. Users will be able to multiple projects to manage different websites with different credentials.
+
+**To testing using provided samples please use following credentials when logging into live website**
+username - kyawzinthiha
+password - kyawzinthiha
 
 **Services Used**
 
