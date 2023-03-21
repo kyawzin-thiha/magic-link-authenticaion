@@ -16,6 +16,7 @@ const reAuthenticate = async (cookie: string) => {
 		},
 		mode: 'cors',
 		credentials: 'include',
+		cache: 'no-cache',
 	});
 	if (response.ok) {
 		return true;
