@@ -18,7 +18,7 @@ export class MagicLinkModule {
           credentials: false,
         }),
       )
-      .exclude('/magic-link/auth/*')
-      .forRoutes('/magic-link/*');
+      .exclude('magic-link/auth/*')
+      .forRoutes('magic-link/*');
   }
 }
