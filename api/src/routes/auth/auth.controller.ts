@@ -50,6 +50,7 @@ export class AuthController {
 			httpOnly: process.env.NODE_ENV === 'production' ? true : false,
 			secure: process.env.NODE_ENV === 'production' ? true : false,
 			sameSite: 'None',
+			domain: process.env.WEB_DOMAIN,
 			maxAge: 60 * 60 * 24 * 7 * 1000,
 		});
 
@@ -86,6 +87,7 @@ export class AuthController {
 			httpOnly: process.env.NODE_ENV === 'production' ? true : false,
 			secure: process.env.NODE_ENV === 'production' ? true : false,
 			sameSite: 'None',
+			domain: process.env.WEB_DOMAIN,
 			maxAge: 60 * 60 * 24 * 7 * 1000,
 		});
 
