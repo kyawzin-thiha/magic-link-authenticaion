@@ -28,7 +28,8 @@ import { BcryptService } from './bcrypt.service';
                 const client = createClient({
                     url: process.env.REDIS_URL,
                 });
-                client.on('error', () => {
+                client.on('error', (error: any) => {
+                    console.log("Redis error " + error);
                     console.log('Redis connection error')
                     process.exit(1);
                 });
